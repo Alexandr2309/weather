@@ -28,7 +28,7 @@ export const getIconLink = async (icon) => {
 
 
 export const degrees = (deg) => {
-  if (deg < 45) return 'С';
+  if (deg < 45) return 'Север';
   else if (deg === 45) return 'СевероВосток';
   else if (deg <= 90) return 'Восток';
   else if (deg === 135) return 'ЮгоВосток';

@@ -1,16 +1,10 @@
-import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
-import Accordion from '@mui/material/Accordion';
-import AccordionDetails from '@mui/material/AccordionDetails';
-import AccordionSummary from '@mui/material/AccordionSummary';
-import Typography from '@mui/material/Typography';
-import React, { useEffect } from 'react';
-import { getCoordsCity, getIconLink, getWeather, degrees } from './../openweather/index';
-import codes from './../openweather/conditions_codes';
+import React from 'react';
 import { useSelector } from 'react-redux';
-import MainCard from './Card';
-import MainAccordion from './Accordion';
 import { useParams } from 'react-router-dom';
+import { degrees } from './../openweather/index';
 import { switchDays } from './../utils/func';
+import MainAccordion from './Accordion';
+import MainCard from './Card';
 
 
 const Main = () => {

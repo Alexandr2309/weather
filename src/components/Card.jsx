@@ -14,9 +14,9 @@ import compass from '../images/icons/иконки давления_влажно�
 import { getIconLink } from '../openweather';
 import { setDate, setTime } from '../store/slices/citySlice';
 import codes from './../openweather/conditions_codes';
-import { getDay, getNormalizeData, switchDays, getMonth } from './../utils/func';
-import Forecast from './Forecast';
 import imgCode from './../openweather/images';
+import { getMonth, getNormalizeData, switchDays } from './../utils/func';
+import Forecast from './Forecast';
 
 
 const MainCard = ({ weather, city }) => {

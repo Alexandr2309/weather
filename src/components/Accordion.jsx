@@ -1,14 +1,13 @@
-import React, { useState, useEffect } from 'react';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import Accordion from '@mui/material/Accordion';
 import AccordionDetails from '@mui/material/AccordionDetails';
 import AccordionSummary from '@mui/material/AccordionSummary';
-import Typography from '@mui/material/Typography';
-import SunCalc from 'suncalc';
-import { getNormalizeData, normalizeStrTime } from './../utils/func';
-import { useSelector } from 'react-redux';
-import axios from 'axios';
 import Divider from '@mui/material/Divider';
+import Typography from '@mui/material/Typography';
+import axios from 'axios';
+import React, { useEffect, useState } from 'react';
+import { useSelector } from 'react-redux';
+import { normalizeStrTime } from './../utils/func';
 
 const MainAccordion = ({ degrees, weather }) => {
   const [sunrise, setSunrise] = useState('');

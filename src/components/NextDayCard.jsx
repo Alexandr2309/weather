@@ -1,6 +1,6 @@
-import React from 'react';
-import { List, ListItem, ListItemButton, ListItemIcon, ListItemText, Paper, Tooltip } from '@mui/material';
+import { ListItem, ListItemButton, ListItemIcon, ListItemText, Paper, Tooltip } from '@mui/material';
 import Typography from '@mui/material/Typography';
+import React from 'react';
 import { useNavigate } from 'react-router-dom';
 
 const NextDayCard = ({ src, title, subtitle, tempDay, tempNight, description, day }) => {

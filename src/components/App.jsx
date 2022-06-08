@@ -16,8 +16,6 @@ import { setFullWeather } from '../store/slices/weatherSlice';
 import { getCoordsCity } from './../openweather/index';
 
 function App({ day = '' }) {
-  const [page, setPage] = React.useState(1);
-  const handleChange = (e, value) => setPage(value);
   const weather = useSelector(state => state.weather);
   const route = useNavigate();
   const [isReady, setIsReady] = useState(true);
@@ -40,7 +38,7 @@ function App({ day = '' }) {
             const coords = getCoordsCity(response.data.hits[0].city).then(coords => {
               getWeather(coords.lat, coords.lng).then(res => {
                 const jsonWeather = JSON.stringify(res.weather[0], (key, value) => {
-                  if (key == 'main' || key == 'description') return undefined;
+                  if (key === 'main' || key === 'description') return undefined;
                   return value
                 });
                 dispatch(setFullWeather({
@@ -59,7 +57,7 @@ function App({ day = '' }) {
                 let currentDate = today;
                 res.list.forEach(item => {
                   const jsonWeather = JSON.stringify(item.weather[0], (key, value) => {
-                    if (key == 'main' || key == 'description') return undefined;
+                    if (key === 'main' || key === 'description') return undefined;
                     return value
                   });
                   let objToPush = {

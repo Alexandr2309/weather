@@ -36,7 +36,7 @@ const NextDays = ({isReady, setIsReady }) => {
     }
     const listItem = Math.floor(forecast[day].list.length / 2);
     return (
-      <NextDayCard src={forecast[day].list[listItem].weather.icon} title={(index == 0 && howDay === 'today') ? 'Сегодня' : dateTitle} subtitle={`${strDate[2]}, ${monthTitle}`} tempDay={tempD} tempNight={tempN} key={index.toString() + Math.random()} description={codes[forecast[day].list[listItem].weather.id]} day={day} />
+      <NextDayCard src={forecast[day].list[listItem].weather.icon} title={(index === 0 && howDay === 'today') ? 'Сегодня' : dateTitle} subtitle={`${strDate[2]}, ${monthTitle}`} tempDay={tempD} tempNight={tempN} key={index.toString() + Math.random()} description={codes[forecast[day].list[listItem].weather.id]} day={day} />
     )
   };
 

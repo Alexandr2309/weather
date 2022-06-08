@@ -1,20 +1,23 @@
 import axios from 'axios';
 
+const openweatherKey = process.env.REACT_APP_OPENWEATHERMAP_API_KEY,
+graphopper = process.env.REACT_APP_GRAPHHOPPER_API_KEY;
+
 export const getCoordsCity = async (city) => {
-  const response = await axios.get(`https://graphhopper.com/api/1/geocode?q=${city}&key=${process.env.REACT_APP_GRAPHHOPPER_API_KEY}`);
+  const response = await axios.get(`https://graphhopper.com/api/1/geocode?q=${city}&key=${graphopper}`);
   const data = response.data.hits[0].point;
 
   return data;
 }
 
 export const getWeather = async (lat, lon) => {
-  const response = await axios.get(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&lang=ru&units=metric&appid=${process.env.REACT_APP_OPENWEATHERMAP_API_KEY}`);
+  const response = await axios.get(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&lang=ru&units=metric&appid=${openweatherKey}`);
   const data = response.data;
 
   return data;
 }
 export const getWeatherForecast = async (lat, lon) => {
-  const response = await axios.get(`https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&lang=ru&units=metric&appid=${process.env.REACT_APP_OPENWEATHERMAP_API_KEY}`);
+  const response = await axios.get(`https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&lang=ru&units=metric&appid=${openweatherKey}`);
   const data = response.data;
 
   return data;

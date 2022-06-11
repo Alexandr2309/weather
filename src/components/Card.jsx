@@ -47,7 +47,7 @@ const MainCard = ({ weather, city }) => {
 
   async function getCurrentTime(lat, lon) {
     const domParser = new DOMParser();
-    const response = await fetch(`http://api.timezonedb.com/v2.1/get-time-zone?by=position&lat=${lat}&lng=${lon}&key=HRCO44VPSUJB`);
+    const response = await fetch(`https://api.timezonedb.com/v2.1/get-time-zone?by=position&lat=${lat}&lng=${lon}&key=HRCO44VPSUJB`);
     const data = await response.text();
     const xmlData = domParser.parseFromString(data, 'text/xml');
     let time = await xmlData.querySelector('formatted').textContent;
